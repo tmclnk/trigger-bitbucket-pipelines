@@ -2,7 +2,7 @@
 
 I'd like to address how to handle lots of _environments_ within BitBucket
 Pipelines, as I haven't seen much written about this. Below I'm presenting
-two options
+two options:
 
 1. Using tags to parameterize Builds
 2. Using the BitBucket API
@@ -183,7 +183,7 @@ to what we have without imposing much change on developers.
 ## BitBucket API
 
 Another way to pass arbitrary variables to BitBucket is via its API. See
-[Trigger Pipeline For Branch](https://developer.atlassian.com/bitbucket/api/2/reference/resource/repositories/%7Bworkspace%7D/%7Brepo_slug%7D/pipelines/#post)
+[Trigger Pipeline For Branch](https://developer.atlassian.com/bitbucket/api/2/reference/resource/repositories/%7Bworkspace%7D/%7Brepo_slug%7D/pipelines/#post).
 
 Here we define $DEPLOYMENT_GROUP, very similar to what we did above with the
 "deployments:" line.
@@ -241,3 +241,8 @@ the deployment portion of this workflow to another tool and parameterizing it
 there. Our team is accustomed to BitBucket, so we aren't keen on making our team
 learn the mechanics of how their deployments work unless they are interested
 in it.
+
+## Related Links
+
+* [BitBucket Pipelines API](https://developer.atlassian.com/bitbucket/api/2/reference/resource/repositories/%7Bworkspace%7D/%7Brepo_slug%7D/pipelines/#post)
+* [bitbucket-pipelines.yml reference](https://support.atlassian.com/bitbucket-cloud/docs/configure-bitbucket-pipelinesyml/)
