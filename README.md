@@ -1,21 +1,29 @@
 # Our Problem
 
-I'd like to address how to handle lots of _environments_ within BitBucket
-Pipelines, as I haven't seen much written about this. Below I'm presenting
-two options:
+> The second derivative is positive.
+>
+> -Vint Cerf, probably
 
-1. Using tags to parameterize Builds
-2. Using the BitBucket API
+I'd like to address how to handle lots of deployment environments within
+BitBucket Pipelines, as I haven't seen much written about this.
+Below I'm presenting two options:
 
-My team is responsible for an application that is composed of roughly ten
-backend services, plus a handful of projects which deploy static resources
-to a CDN. Additionally, we have roughly twenty target environments, each
+1. Using tags to parameterize builds
+2. Using the BitBucket API to pass variables
+
+I don't intend to address infrastructure tooling that's required to
+manage lots of environments, but it's worth mentioning that CloudFormation
+and Terraform are key parts of our toolchain.
+
+## We Have Lots of Environments
+
+My team is responsible for an application that is composed of roughly ten (10)
+backend services, plus a handful (5-ish) of projects which deploy static resources
+to a CDN. Additionally, we have roughly twenty (20) target environments, each
 of which may have an arbitrary combination of the above projects.
 
-## Why So Many Environments?
-
 Some of the environments correspond to familiar ones. So, for example,
-there may be four "dev" environments. Others are ad-hoc environments
+there are four "dev" environments. Others are ad-hoc environments
 provisioned specifically for integration work with a particular client.
 The proliferation of environments is a result of licensing restrictions,
 teams working in diffrent continents at different cadences, and clients
